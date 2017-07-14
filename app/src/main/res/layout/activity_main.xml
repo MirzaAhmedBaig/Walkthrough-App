@@ -54,7 +54,7 @@
             android:layout_marginBottom="33dp"
             android:background="@color/transprent"
             android:layout_marginLeft="20dp"
-            android:text="Sing In"
+            android:text="Sign In"
             android:textAlignment="center"
             android:textSize="15dp"
             android:textColor="@color/colorPrimary"
@@ -65,10 +65,19 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/loginFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:visibility="gone">
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/signUpFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         android:visibility="gone">
 
 

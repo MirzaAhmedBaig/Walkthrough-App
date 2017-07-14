@@ -3,9 +3,6 @@ package com.mirza.frainz.frainz_assignment;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.CountDownTimer;
-import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,10 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator;
 
@@ -27,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
     MyPagerAdapter adapter;
     DotIndicator indicator;
     public static Context context;
-    TextView view;
+    TextView view, msg1, msg2, msg3;
+    ImageView image;
+    int resID;
+    View anim;
+    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,11 @@ public class MainActivity extends AppCompatActivity {
         signin = (Button) findViewById(R.id.button2);
         indicator = (DotIndicator) findViewById(R.id.indicator);
         pager = (ViewPager) findViewById(R.id.pager);
-        view= (TextView) findViewById(R.id.textView);
-        final int resID = getResources().getIdentifier("border", "drawable", "com.mirza.frainz.frainz_assignment");
+        view = (TextView) findViewById(R.id.textView);
+        msg1 = (TextView) findViewById(R.id.textView10);
+        resID = getResources().getIdentifier("border", "drawable", "com.mirza.frainz.frainz_assignment");
+
+        animation = AnimationUtils.loadAnimation(MainActivity.context, R.anim.bounce);
 
         adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -58,20 +63,42 @@ public class MainActivity extends AppCompatActivity {
 
             @SuppressLint("SetTextI18n")
             public void onPageSelected(int position) {
-                if (position == 0) {
-                    indicator.setSelectedDotColor(Color.BLACK);
-                    indicator.setUnselectedDotColor(Color.BLACK);
-                    signin.setTextColor(Color.rgb(0, 132, 191));
-                    register.setBackgroundColor(Color.rgb(0, 132, 191));
-                } else {
-                    indicator.setSelectedDotColor(Color.WHITE);
-                    indicator.setUnselectedDotColor(Color.WHITE);
-                    signin.setTextColor(Color.WHITE);
-                    register.setBackgroundResource(resID);
-                }
+                indicator.setSelectedDotColor(Color.WHITE);
+                indicator.setUnselectedDotColor(Color.WHITE);
+                signin.setTextColor(Color.WHITE);
+                register.setBackgroundResource(resID);
                 indicator.setSelectedItem(position, true);
-                View anim = findViewById(R.id.relativeLayout);
-                anim.startAnimation(AnimationUtils.loadAnimation(MainActivity.context, R.anim.shake));
+                switch (position) {
+                    case 0:
+                        register = (Button) findViewById(R.id.button);
+                        indicator.setSelectedDotColor(Color.BLACK);
+                        indicator.setUnselectedDotColor(Color.BLACK);
+                        signin.setTextColor(Color.rgb(0, 132, 191));
+                        register.setBackgroundColor(Color.rgb(0, 132, 191));
+                        register.startAnimation(AnimationUtils.loadAnimation(MainActivity.context, R.anim.shake));
+                        break;
+                    case 1:
+                        anim = findViewById(R.id.relativeLayout);
+                        anim.startAnimation(AnimationUtils.loadAnimation(MainActivity.context, R.anim.shake));
+                        break;
+                    case 2:
+
+                        Animation animation1 = AnimationUtils.loadAnimation(MainActivity.context, R.anim.bounce);
+                        image = (ImageView) findViewById(R.id.congoImage);
+                        image.startAnimation(animation1);
+
+                        Animation animation2 = AnimationUtils.loadAnimation(MainActivity.context, R.anim.bounce);
+                        animation2.setStartOffset(600);
+                        msg2 = (TextView) findViewById(R.id.textView11);
+                        msg2.setAnimation(animation2);
+
+                        Animation animation3 = AnimationUtils.loadAnimation(MainActivity.context, R.anim.bounce);
+                        animation3.setStartOffset(1000);
+                        msg3 = (TextView) findViewById(R.id.textView12);
+                        msg3.setAnimation(animation3);
+                        break;
+                }
+
             }
 
         });
@@ -80,10 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void register(View v) {
-        register.startAnimation(AnimationUtils.loadAnimation(MainActivity.context, R.anim.popup));
     }
-
-
 
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
@@ -103,10 +127,8 @@ public class MainActivity extends AppCompatActivity {
                     return Span.newInstance(0);
                 case 1:
                     return Span.newInstance(1);
-                case 2:
-                    return Span.newInstance(2);
                 default:
-                    return Span.newInstance(3);
+                    return Span.newInstance(2);
             }
         }
     }

@@ -29,5 +29,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.viewpagerindicator:parent:2.4.1'
     compile 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
+    compile 'de.hdodenhof:circleimageview:1.2.1'
     testCompile 'junit:junit:4.12'
 }

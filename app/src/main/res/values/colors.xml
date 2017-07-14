@@ -8,5 +8,7 @@
     <color name="transprent">#00ffffff</color>
     <color name="basic">#e6e9ec</color>
     <color name="light">#666666</color>
+    <color name="gray">#333333</color>
+    <color name="back">#c4c3c3</color>
     <color name="black">#000000</color>
 </resources>

@@ -1,12 +1,109 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/frame1"
     android:background="@color/primaryTrans"
     tools:context="com.mirza.frainz.frainz_assignment.Span">
 
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Connect and keep in touch with your network"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="94dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Today"
+            android:textColor="@color/light"
+            android:textSize="20dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView9"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/my" />
+
+        <Button
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/mybutton"
+            android:padding="10dp"
+            android:text="Congrats on the role!"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/congoImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignRight="@+id/textView9"
+            android:layout_below="@+id/textView10"
+            app:srcCompat="@drawable/congo" />
+
+        <Button
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/congoImage"
+            android:background="@drawable/roundview"
+            android:padding="10dp"
+            android:text="Thanks!"
+            android:textAllCaps="false"
+            android:textColor="@color/gray" />
+
+
+        <Button
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView11"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/roundview"
+            android:padding="10dp"
+            android:text="Let's catch up soon"
+            android:textAllCaps="false"
+            android:textColor="@color/gray" />
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
