@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView view, msg1, msg2, msg3;
     ImageView image;
     int resID;
-    View anim;
+    View anim, loginForm, signUpForm;
     Animation animation;
 
     @Override
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+
+        loginForm = findViewById(R.id.loginFrame);
+        signUpForm = findViewById(R.id.signUpFrame);
 
         register = (Button) findViewById(R.id.button);
         register.startAnimation(AnimationUtils.loadAnimation(MainActivity.context, R.anim.shake));
@@ -106,7 +109,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void login(View v) {
+        signUpForm.setVisibility(View.GONE);
+        loginForm.setVisibility(View.VISIBLE);
+    }
+
     public void register(View v) {
+        loginForm.setVisibility(View.GONE);
+        signUpForm.setVisibility(View.VISIBLE);
+    }
+
+    public void onBackPressed() {
+        loginForm.setVisibility(View.GONE);
+        signUpForm.setVisibility(View.GONE);
     }
 
 
@@ -118,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 4;
+            return 3;
         }
 
         public Fragment getItem(int pos) {

@@ -26,7 +26,7 @@
             android:layout_above="@+id/button"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            app:numberOfDots="4"
+            app:numberOfDots="3"
             app:selectedDotColor="@color/black"
             app:selectedDotIndex="0"
             app:unselectedDotColor="@color/black" />
@@ -38,28 +38,29 @@
             android:layout_above="@+id/button2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="@color/colorPrimary"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:textAlignment="center"
-            android:textSize="15dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorPrimary"
             android:onClick="register"
-            android:text="Join Now" />
+            android:text="Join Now"
+            android:textAlignment="center"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_alignEnd="@+id/button"
             android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/button"
             android:layout_marginBottom="33dp"
-            android:background="@color/transprent"
             android:layout_marginLeft="20dp"
+            android:background="@color/transprent"
+            android:onClick="login"
             android:text="Sign In"
             android:textAlignment="center"
-            android:textSize="15dp"
             android:textColor="@color/colorPrimary"
-            android:layout_alignRight="@+id/button"
-            android:layout_alignEnd="@+id/button" />
+            android:textSize="15dp" />
 
 
     </RelativeLayout>
@@ -69,17 +70,188 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
+        android:padding="20dp"
         android:visibility="gone">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/usernameWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/passWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/usernameWrapper">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/passWrapper"
+                android:layout_marginTop="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/passWrapper"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/border"
+            android:text="SIGN IN"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button3"
+            android:layout_marginTop="11dp"
+            android:background="@color/transprent"
+            android:text="FORGOT PASSWORD?"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/button4"
+            android:background="@color/transprent"
+            android:onClick="register"
+            android:text="JOIN NOW"
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/signUpFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
+        android:padding="20dp"
         android:visibility="gone">
 
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/fnameW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First name"
+                android:textColor="@color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/lnameW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/fnameW">
+
+            <EditText
+                android:id="@+id/lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/passW"
+                android:layout_marginTop="20dp"
+                android:hint="Last name"
+                android:textColor="@color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/remailW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/lnameW">
+
+            <EditText
+                android:id="@+id/remail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/rpassW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/remailW">
+
+            <EditText
+                android:id="@+id/rpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rpassW"
+                android:layout_marginTop="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rpassW"
+            android:layout_marginTop="63dp"
+            android:background="@drawable/border"
+            android:text="SIGN IN"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button6"
+            android:layout_marginTop="11dp"
+            android:background="@color/transprent"
+            android:onClick="login"
+            android:text="Already have account? Sign In" />
 
     </RelativeLayout>
 
