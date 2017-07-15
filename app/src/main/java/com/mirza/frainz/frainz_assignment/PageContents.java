@@ -15,12 +15,11 @@ public class PageContents extends Fragment {
 
     TextView label;
     View v;
-    int no=1;
+    String data = "";
 
     @SuppressLint("ValidFragment")
-    public PageContents(int no) {
-        this.no=no;
-        // Required empty public constructor
+    public PageContents(String data) {
+        this.data = data;
     }
 
     @Override
@@ -31,10 +30,9 @@ public class PageContents extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v=inflater.inflate(R.layout.page_contents, container, false);
-        label= (TextView) v.findViewById(R.id.no);
-        label.setText("Page "+no);
-        // Inflate the layout for this fragment
+        v = inflater.inflate(R.layout.page_contents, container, false);
+        label = (TextView) v.findViewById(R.id.no);
+        label.setText("" + data);
         return v;
     }
 

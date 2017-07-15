@@ -54,15 +54,12 @@ public class MainActivity extends AppCompatActivity {
     View anim, loginForm, signUpForm;
     Animation animation;
     EditText email, password, fname, lname, remail, rpassword;
-    DatabaseHandler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-
-        handler=new DatabaseHandler(this);
 
         loginForm = findViewById(R.id.loginFrame);
         signUpForm = findViewById(R.id.signUpFrame);
@@ -278,7 +275,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, Home.class);
                 startActivity(i);
                 finish();
-//                handler.storeInfo(userEmail,password);
                 Toast.makeText(getBaseContext(), "Welcome to Frainz", Toast.LENGTH_LONG).show();
                 load.dismiss();
             } else {
@@ -367,10 +363,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, Home.class);
                 startActivity(i);
                 finish();
-                handler.storeInfo(userEmail,password);
                 Toast.makeText(getBaseContext(), "Welcome to Frainz", Toast.LENGTH_LONG).show();
                 load.dismiss();
-            }else if (result.equals("x")) {
+            } else if (result.equals("x")) {
                 Toast.makeText(getBaseContext(), "Please try again", Toast.LENGTH_LONG).show();
                 load.dismiss();
             } else {

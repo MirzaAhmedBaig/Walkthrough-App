@@ -1,7 +1,5 @@
 package com.mirza.frainz.frainz_assignment;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,11 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +18,11 @@ public class Home extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    SearchView mSearchView;
-    DatabaseHandler handler;
-    String userName;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        handler=new DatabaseHandler(this);
-
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
@@ -71,11 +58,11 @@ public class Home extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new PageContents(1), "ONE");
-        adapter.addFrag(new PageContents(2), "TWO");
-        adapter.addFrag(new PageContents(3), "THREE");
-        adapter.addFrag(new PageContents(4), "FOUR");
-        adapter.addFrag(new PageContents(5), "FIVE");
+        adapter.addFrag(new PageContents("page 1"), "ONE");
+        adapter.addFrag(new PageContents("page 2"), "TWO");
+        adapter.addFrag(new PageContents("page 2"), "THREE");
+        adapter.addFrag(new PageContents("page 2"), "FOUR");
+        adapter.addFrag(new PageContents("page 2"), "FIVE");
         viewPager.setAdapter(adapter);
     }
 
@@ -104,8 +91,6 @@ public class Home extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-
-            // return null to display only the icon
             return null;
         }
     }

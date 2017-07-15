@@ -239,7 +239,7 @@
             android:layout_marginTop="63dp"
             android:background="@drawable/border"
             android:onClick="newAccount"
-            android:text="SIGN IN"
+            android:text="JOIN NOW"
             android:textColor="@color/white" />
 
         <Button
