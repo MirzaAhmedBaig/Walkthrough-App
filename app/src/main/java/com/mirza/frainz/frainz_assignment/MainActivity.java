@@ -1,7 +1,9 @@
 package com.mirza.frainz.frainz_assignment;
 
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -112,11 +114,17 @@ public class MainActivity extends AppCompatActivity {
     public void login(View v) {
         signUpForm.setVisibility(View.GONE);
         loginForm.setVisibility(View.VISIBLE);
+
     }
 
     public void register(View v) {
         loginForm.setVisibility(View.GONE);
         signUpForm.setVisibility(View.VISIBLE);
+    }
+
+    public void validate(View v) {
+        Intent intent = new Intent(MainActivity.this, Home.class);
+        startActivity(intent);
     }
 
     public void onBackPressed() {

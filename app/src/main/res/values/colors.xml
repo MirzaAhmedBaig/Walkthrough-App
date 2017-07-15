@@ -3,7 +3,7 @@
     <color name="colorPrimary">#0084bf</color>
     <color name="primaryTrans">#e50084bf</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
     <color name="white">#ffffff</color>
     <color name="transprent">#00ffffff</color>
     <color name="basic">#e6e9ec</color>
@@ -11,4 +11,8 @@
     <color name="gray">#414141</color>
     <color name="back">#dfdede</color>
     <color name="black">#000000</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#c8e8ff</color>
 </resources>
