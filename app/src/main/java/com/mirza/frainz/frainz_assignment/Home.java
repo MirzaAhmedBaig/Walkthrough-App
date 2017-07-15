@@ -25,12 +25,16 @@ public class Home extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     SearchView mSearchView;
+    DatabaseHandler handler;
+    String userName;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        handler=new DatabaseHandler(this);
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);

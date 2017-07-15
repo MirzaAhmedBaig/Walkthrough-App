@@ -11,7 +11,7 @@ $pass = $_REQUEST['p'];
 
 $result = $mysql->query("select * from user_frainz where email='{$id}'");
 if ($result->num_rows == 1) {
-	echo json_encode(array("t" => "e", "r"=>"Email already present...!"));
+	echo json_encode(array("t" => "e"));
 	return;
 }
 $mysql->autocommit(false);
@@ -20,7 +20,7 @@ if ($r1) {
 	$mysql->commit();
     echo json_encode(array("t" => "s"));
 }else {
-    echo json_encode(array("t" => "e", "r"=>"Something went wrong please try again...!"));
+    echo json_encode(array("t" => "x"));
    }
    $mysql->autocommit(true);
 

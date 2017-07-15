@@ -238,6 +238,7 @@
             android:layout_below="@+id/rpassW"
             android:layout_marginTop="63dp"
             android:background="@drawable/border"
+            android:onClick="newAccount"
             android:text="SIGN IN"
             android:textColor="@color/white" />
 
