@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         signin = (Button) findViewById(R.id.button2);
         indicator = (DotIndicator) findViewById(R.id.indicator);
         pager = (ViewPager) findViewById(R.id.pager);
-        view = (TextView) findViewById(R.id.textView);
         msg1 = (TextView) findViewById(R.id.textView10);
         resID = getResources().getIdentifier("border", "drawable", "com.mirza.frainz.frainz_assignment");
 

@@ -9,29 +9,23 @@
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:drawableRight="@drawable/frainz"
-        android:text="Frainz"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="35dp"
         android:text="Connect to Opportunity"
         android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="189dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
